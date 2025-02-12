@@ -1,0 +1,80 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #00576d;
+    border-bottom: 3px solid #0110b6;
+}
+
+.Header img {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+}
+
+nav li {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4f6dff;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #051b32;
+}
+
+/* Стиль для выпадающего меню */
+nav li.categories:hover .dropdown {
+    display: block; /* Показываем список при наведении */
+}
+
+nav .dropdown {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute;
+    top: 100%; /* Размещаем ниже родительского элемента */
+    left: 0;
+    background-color: #00576d;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+nav .dropdown li {
+    margin: 5px 0;
+}
+
+nav .dropdown li button {
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+nav .dropdown li button:hover {
+    background-color: #4f6dff;
+}
