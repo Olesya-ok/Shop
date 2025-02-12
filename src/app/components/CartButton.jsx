@@ -5,12 +5,11 @@ function CartButton({ product }) {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cart.cartItems);
 
-    // Проверяем, есть ли товар уже в корзине
     const isInCart = cartItems.some(item => item.id === product.id);
 
     const handleAddToCart = () => {
         if (!isInCart) {
-            dispatch(addToCart(product)); // Отправляем экшен с товаром
+            dispatch(addToCart(product));
         }
     };
 
