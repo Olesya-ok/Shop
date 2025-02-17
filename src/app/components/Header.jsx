@@ -1,25 +1,33 @@
 import logo from '../../essets/qC02fVRBQUSRGS9NYCpHrA.webp';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../../styles/Header.css';
+import "../../App.css"
 import React from "react";
 
-function Header({onCategoryChange }) {
+function Header({ onCategoryChange }) {
+    const navigate = useNavigate();
+
+    const handleCategoryClick = (category) => {
+        onCategoryChange(category);
+        navigate("/");
+    };
+
     return (
-        <div className="Header">
-            <div>
+        <div className="header">
+            <div className="logo">
                 <img src={logo} alt="logo" />
             </div>
 
             <nav>
                 <ul>
                     <li className="categories">
-                        Categories
+                        <span>Categories</span>
                         <ul className="dropdown">
-                            <li><button onClick={() => onCategoryChange('')}>All Categories</button></li>
-                            <li><button onClick={() => onCategoryChange("men's clothing")}>Men's Clothing</button></li>
-                            <li><button onClick={() => onCategoryChange("women's clothing")}>Women's Clothing</button></li>
-                            <li><button onClick={() => onCategoryChange('electronics')}>Electronics</button></li>
-                            <li><button onClick={() => onCategoryChange('jewelery')}>Jewelery</button></li>
+                            <li><button onClick={() => handleCategoryClick('')}>All Categories</button></li>
+                            <li><button onClick={() => handleCategoryClick("men's clothing")}>Men's Clothing</button></li>
+                            <li><button onClick={() => handleCategoryClick("women's clothing")}>Women's Clothing</button></li>
+                            <li><button onClick={() => handleCategoryClick('electronics')}>Electronics</button></li>
+                            <li><button onClick={() => handleCategoryClick('jewelery')}>Jewelery</button></li>
                         </ul>
                     </li>
                     <li><Link to="/">Product</Link></li>
@@ -33,3 +41,5 @@ function Header({onCategoryChange }) {
 }
 
 export default Header;
+
+

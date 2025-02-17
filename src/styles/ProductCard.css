@@ -1,47 +1,47 @@
 .productCard {
     display: flex;
-    border: 1px solid #ddd; /* Граница */
-    border-radius: 8px; /* Закругленные углы */
-    background-color: #fff; /* Белый фон */
-    overflow: hidden; /* Чтобы контент не выходил за рамки */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для эффекта */
-    padding: 10px;
-    transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+    max-width: 100%;
 }
 
 .productCard:hover {
-    transform: scale(1.05); /* Увеличение при наведении */
-}
-
-.product-image-container {
-    flex-shrink: 0; /* Предотвращает сжатие изображения */
-    margin-right: 15px; /* Расстояние между картинкой и текстом */
+    transform: scale(1.05);
 }
 
 .product-image {
-    width: 70px;
-    height: 70px;
-    object-fit: cover; /* Картинка будет обрезана, чтобы заполнить блок */
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .product-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1; /* Позволяет этому блоку занимать оставшееся пространство */
+    text-align: center;
+    width: 100%;
 }
 
 .product-info h2 {
     font-size: 18px;
-    margin: 0;
+    margin: 10px 0 5px;
     font-weight: bold;
 }
 
 .product-info p {
     font-size: 14px;
     color: #666;
-    margin: 10px 0;
+    margin: 5px 0;
     line-height: 1.4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 .product-info span {
@@ -50,27 +50,18 @@
     color: #333;
 }
 
-/* Для отображения товаров в 3 колонки на больших экранах */
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-    gap: 20px; /* расстояние между колонками */
-    margin: 20px;
+.load-more-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+    margin-top: 20px;
 }
 
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    .product-list {
-        grid-template-columns: 1fr; /* 1 колонка для мобильных устройств */
-    }
-
-    .product-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .productCard {
-        flex-direction: column; /* Для мобильных устройств товары будут в колонку */
-        align-items: center; /* Центрируем контент */
-    }
+.load-more-button:hover {
+    background-color: #d1d1d1;
 }

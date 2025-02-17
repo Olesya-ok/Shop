@@ -1,8 +1,8 @@
 import '../../styles/ProductCard.css'
 import CartButton from "./CartButton";
+import {Link} from "react-router-dom";
 
 function ProductCard({ product }) {
-    console.log(product);
     return (
         <div className="productCard">
             <div className="product-image-container">
@@ -12,6 +12,7 @@ function ProductCard({ product }) {
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>
                 <span>{`$${product.price}`}</span>
+                <Link to={`/product/${product.id}`}>View Details</Link>
             </div>
             <CartButton product={product} />
         </div>

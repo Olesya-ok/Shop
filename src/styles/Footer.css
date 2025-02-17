@@ -1,7 +1,7 @@
 .Footer {
-    background-color: #00576d;
-    padding: 20px;
-    color: white;
+    background-color: var(--primary-blue);
+    padding: 8px;
+    color: var(--text-light);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -29,7 +29,7 @@
 
 .info .contact,
 .info .links {
-text-align: left;
+    text-align: left;
 }
 
 .info ul {
@@ -43,24 +43,24 @@ text-align: left;
 }
 
 .info ul li a {
-    color: #4f6dff;
+    color: var(--secondary-blue);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .info ul li a:hover {
-    color: #051b32;
+    color: var(--accent-purple);
 }
 
 .social-icons img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
 }
 
-p {;
+p {
     font-size: 12px;
-    color: white;
+    color: var(--text-light);
     text-align: center;
     width: 100%;
     margin-bottom: 0;

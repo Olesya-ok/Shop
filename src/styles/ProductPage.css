@@ -1,0 +1,119 @@
+.ProductPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.ProductPage h1 {
+    margin-top: 100px;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #333;
+}
+
+.ProductPage img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.product-list-info{
+    display: flex;
+}
+
+.ProductPage p {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+    max-width: 600px;
+}
+
+.ProductPage p:last-of-type {
+    font-weight: bold;
+    font-size: 20px;
+    color: #222;
+}
+
+.ProductPage button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px;
+}
+
+.ProductPage button:first-of-type {
+    background-color: #0d91b8;
+    color: white;
+}
+
+.ProductPage button:first-of-type:hover {
+    background-color: #439ae1;
+}
+
+.ProductPage button:last-of-type {
+    background-color: #242fff;
+    color: white;
+}
+
+.ProductPage button:last-of-type:hover {
+    background-color: #2339c8;
+}
+
+@media (max-width: 768px) {
+    .ProductPage img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .ProductPage h1 {
+        font-size: 24px;
+    }
+
+    .ProductPage p {
+        font-size: 16px;
+    }
+
+    .ProductPage p:last-of-type {
+        font-size: 18px;
+    }
+
+    .ProductPage button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ProductPage img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ProductPage h1 {
+        font-size: 22px;
+    }
+
+    .ProductPage p {
+        font-size: 14px;
+    }
+
+    .ProductPage p:last-of-type {
+        font-size: 16px;
+    }
+
+    .ProductPage button {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}

@@ -1,6 +1,7 @@
 import logo from '../../essets/qC02fVRBQUSRGS9NYCpHrA.webp';
 import { Link } from "react-router-dom";
 import '../../styles/Footer.css';
+import "../../App.css"
 
 function Footer() {
     return (

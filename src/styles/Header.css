@@ -1,16 +1,23 @@
-.Header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #00576d;
-    border-bottom: 3px solid #0110b6;
+    padding: 15px 25px;
+    background-color: #6ec6f6;
+    border-bottom: 3px solid #1f52e1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    margin-bottom: 100px;
 }
 
-.Header img {
+.header .logo img {
     width: 72px;
     height: 72px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 nav {
@@ -34,25 +41,35 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #4f6dff;
+    color: #FFFFFF;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #051b32;
+    color: #1f52e1;
 }
 
-/* Стиль для выпадающего меню */
+/* Стили для Categories */
+nav li.categories {
+    position: relative;
+}
+
+nav li.categories span {
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
 nav li.categories:hover .dropdown {
-    display: block; /* Показываем список при наведении */
+    display: block;
+    animation: fadeIn 0.3s ease;
 }
 
 nav .dropdown {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     position: absolute;
-    top: 100%; /* Размещаем ниже родительского элемента */
+    top: 100%;
     left: 0;
-    background-color: #00576d;
+    background-color: #6ec6f6;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -65,7 +82,7 @@ nav .dropdown li {
 
 nav .dropdown li button {
     background: none;
-    color: #fff;
+    color: #FFFFFF;
     border: none;
     font-size: 16px;
     width: 100%;
@@ -76,5 +93,37 @@ nav .dropdown li button {
 }
 
 nav .dropdown li button:hover {
-    background-color: #4f6dff;
+    background-color: #00a6ed;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    nav li.categories {
+        display: none;
+    }
+
+    nav .dropdown {
+        position: static;
+        box-shadow: none;
+        min-width: 100%;
+    }
+}
+

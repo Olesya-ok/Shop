@@ -1,20 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../store/cartSlice"
+import {useCart} from "../hooks/useCart";
 
 function CartButton({ product }) {
-    const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.cart.cartItems);
+        const {cartItems, addItemToCart} = useCart()
 
-    const isInCart = cartItems.some(item => item.id === product.id);
-
-    const handleAddToCart = () => {
-        if (!isInCart) {
-            dispatch(addToCart(product));
-        }
-    };
+    const isInCart = cartItems.some(item => item.id === product.id)
 
     return (
-        <button onClick={handleAddToCart} disabled={isInCart}>
+        <button onClick= {() => addItemToCart(product)} disabled={isInCart}>
             {isInCart ? "В корзине" : "Добавить в корзину"}
         </button>
     );
