@@ -5,10 +5,11 @@
 ## Особливості
 
 - Реєстрація та вхід користувачів через Firebase
-  ![image](https://github.com/user-attachments/assets/c80e34a9-0c79-4644-a284-b6561290b09f)
-
+![image](https://github.com/user-attachments/assets/f474236f-fb88-4914-9c9c-4474364c56fe)
 - Перегляд товарів з можливістю фільтрації та сортування
+  ![image](https://github.com/user-attachments/assets/c80e34a9-0c79-4644-a284-b6561290b09f)
 - Додавання товарів у кошик та обрані
+  ![image](https://github.com/user-attachments/assets/1e7d2d94-56db-4d14-af0f-29f83ba40c66)
 - Реалізація компонентів з використанням React
 - Зберігання стану додатку за допомогою Redux
 
