@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Інтернет-магазин
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Цей проект - інтернет-магазин, який дозволяє користувачам переглядати товари, додавати їх у кошик, а також здійснювати аутентифікацію. Проект побудований за допомогою React, Redux та Firebase.
 
-## Available Scripts
+## Особливості
 
-In the project directory, you can run:
+- Реєстрація та вхід користувачів через Firebase
+- Перегляд товарів з можливістю фільтрації та сортування
+- Додавання товарів у кошик та обрані
+- Реалізація компонентів з використанням React
+- Зберігання стану додатку за допомогою Redux
 
-### `npm start`
+## Технології
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- Redux
+- Firebase
+- Material UI (для стилізації компонентів)
+- CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Структура проекту
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+/my-ecommerce-site
+│
+├── /Api                     # Папка для конфігурації API
+│   ├── firebaseConfig.js     # Налаштування Firebase
+│   |
+├── /app                     # Основна папка з вихідними кодами
+│   ├── /components          # Компоненти програми
+│   │   ├── /Auth           # Компоненти для аутентифікації
+│   │   │   ├── AuthDetails.jsx # Компонент для відображення деталей аутентифікації
+│   │   │   ├── SignIn.jsx   # Компонент для входу
+│   │   │   ├── SignUp.jsx   # Компонент для реєстрації
+│   │   │   └── AuthModal.jsx # Модальне вікно для аутентифікації
+│   │   ├── CartButton.jsx    # Кнопка для доступу до кошика
+│   │   ├── FavoritesButton.jsx # Кнопка для доступу до обраних товарів
+│   │   ├── Footer.jsx        # Компонент футера
+│   │   ├── Header.jsx        # Компонент заголовка
+│   │   ├── ProductCard.jsx   # Компонент картки товару
+│   │   ├── RecentlyViewed.jsx # Компонент для відображення нещодавно переглянутих товарів
+│   │
+│   ├── /hooks               # Кастомні хуки
+│   │   ├── useAuth.jsx       # Хук для аутентифікації
+│   │   ├── useCart.jsx       # Хук для управління кошиком
+│   │   ├── useFavorites.jsx   # Хук для управління обраними товарами
+│   │   └── useProducts.jsx    # Хук для отримання товарів
+│   │
+│   ├── /store               # Папка для Redux
+│   │   ├── authSlice.jsx     # Слайс для аутентифікації
+│   │   ├── cartSlice.jsx     # Слайс для управління кошиком
+│   │   ├── favoritesSlice.jsx # Слайс для обраних товарів
+│   │   └── productSlice.jsx   # Слайс для товарів
+│   │   └── store.jsx         # Налаштування Redux Store
+│   │
+│   ├── /views               # Сторінки програми
+│   │   ├── AuthPage.jsx      # Сторінка аутентифікації
+│   │   ├── CartPage.jsx      # Сторінка кошика
+│   │   ├── FavoritesPage.jsx  # Сторінка обраних товарів
+│   │   ├── Home.jsx          # Головна сторінка
+│   │   ├── ProductPage.jsx    # Сторінка з детальною інформацією про товар
+│   │
+├── /essets                  # Папка для елементів (можливо, для зображень)
+│
+├── /styles                  # Папка для стилів
+│   ├── CartPage.css          # Стилі для сторінки кошика
+│   ├── FavoritesPage.css      # Стилі для сторінки обраних товарів
+│   ├── Footer.css            # Стилі для футера
+│   ├── Header.css            # Стилі для заголовка
+│   ├── Home.css              # Стилі для головної сторінки
+│   ├── ProductCard.css       # Стилі для картки товару
+│   ├── ProductPage.css       # Стилі для сторінки товару
+│   ├── RecentlyViewed.css     # Стилі для компонента нещодавно переглянутих товарів
+│   ├── AuthModal.css         # Стилі для модального вікна аутентифікації
+│   ├── App.css               # Глобальні стилі
+│
+├── App.js                   # Головний компонент програми
+├── index.js                 # Точка входу в програму
+├── index.css                # Глобальні стилі для програми
+└── products.json            # JSON файл з даними про товари
