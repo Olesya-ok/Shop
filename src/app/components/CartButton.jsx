@@ -6,8 +6,8 @@ function CartButton({ product }) {
     const isInCart = cartItems.some(item => item.id === product.id)
 
     return (
-        <button onClick= {() => addItemToCart(product)} disabled={isInCart}>
-            {isInCart ? "В корзине" : "Добавить в корзину"}
+        <button className="cart-button" onClick= {() => addItemToCart(product)} disabled={isInCart}>
+            {isInCart ? "In the Card" : "Add to Cart"}
         </button>
     );
 }

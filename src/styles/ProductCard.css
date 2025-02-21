@@ -3,65 +3,97 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #ddd;
+    border: 1px solid #0730a3;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #edfdfb;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
     transition: transform 0.3s ease;
-    max-width: 100%;
+    max-width: 250px;
+    text-align: center;
+    position: relative;
 }
 
-.productCard:hover {
-    transform: scale(1.05);
+.product-image-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.favorites-button {
+    position: absolute;
+    right: -40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.favorites-button svg {
+    fill: #0730a3;
+    transition: fill 0.3s;
+    width: 24px;
+    height: 24px;
+}
+
+.product-image-container {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .product-image {
     width: 100px;
     height: 100px;
     object-fit: contain;
-}
 
-.product-info {
-    text-align: center;
-    width: 100%;
 }
 
 .product-info h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin: 10px 0 5px;
     font-weight: bold;
-}
-
-.product-info p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0;
-    line-height: 1.4;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 100%;
+    color: #0730a3;
 }
 
 .product-info span {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #031e65;
+    display: block;
+    margin-top: 5px;
 }
 
-.load-more-button {
+.cart-button {
     width: 100%;
     padding: 10px;
-    font-size: 18px;
-    background-color: #f0f0f0;
+    font-size: 16px;
+    background-color: #00a6ed;
+    color: white;
     border: none;
     cursor: pointer;
     transition: background 0.3s;
-    text-align: center;
-    margin-top: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-.load-more-button:hover {
-    background-color: #d1d1d1;
+.cart-button:hover {
+    background-color: #031e65;
+}
+
+.product-info a {
+    display: block;
+    text-decoration: none;
+    color: #0730a3;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: color 0.3s;
+}
+
+.product-info a:hover {
+    color: #031e65;
+    text-decoration: underline;
 }

@@ -1,22 +1,17 @@
 .Footer {
-    background-color: var(--primary-blue);
-    padding: 8px;
-    color: var(--text-light);
+    background-color: #daf6ff;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.Footer .logo {
-    display: flex;
-    align-items: center;
-    width: 150px;
+    margin: 0 auto;
+    padding: 15px 25px;
 }
 
 .Footer .logo img {
-    width: 72px;
-    height: 72px;
+    width: 50px;
+    height: 50px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .info {
@@ -43,24 +38,50 @@
 }
 
 .info ul li a {
-    color: var(--secondary-blue);
+    color: #0730a3;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .info ul li a:hover {
-    color: var(--accent-purple);
+    color: #031e65;
 }
 
-.social-icons img {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+.social-icons {
+    display: flex;
+    gap: 10px;
 }
+
+.social-icons a {
+    display: inline-block;
+    transition: color 0.3s, transform 0.3s;
+    color: #333; /* Тёмный цвет */
+    font-size: 24px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons .facebook:hover {
+    color: #1877F2;
+}
+
+.social-icons .instagram:hover {
+    color: #E4405F;
+}
+
+.social-icons .telegram:hover {
+    color: #0088CC;
+}
+
+.social-icons .email:hover {
+    color: #FF8C00;
+}
+
 
 p {
     font-size: 12px;
-    color: var(--text-light);
     text-align: center;
     width: 100%;
     margin-bottom: 0;

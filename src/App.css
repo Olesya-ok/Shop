@@ -1,11 +1,10 @@
-:root {
-    --primary-blue: #00576d;
-    --secondary-blue: #4f6dff;
-    --accent-purple: #967ada;
-    --accent-green: #92dfa6;
-    --text-dark: #333;
-    --text-light: #fff;
-    --background-light: #f0f0f0;
-    --border-color: #ddd;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
+.main-content {
+    flex: 1;
+}

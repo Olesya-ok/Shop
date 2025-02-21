@@ -1,9 +1,19 @@
 import { useCart } from "../hooks/useCart";
 import "../../styles/CartPage.css";
 import "../../App.css"
+import {useAuth} from "../hooks/useAuth";
 
-function CartPage() {
+function CartPage({openAuthModal }) {
     const { cartItems, updateQuantity, totalPrice } = useCart();
+    const isAuthenticated = useAuth();
+
+    const handleOrderClick = () => {
+        if (!isAuthenticated) {
+            openAuthModal();
+        } else {
+            console.log("Заказ оформляется...");
+        }
+    };
 
     return (
         <div className="cart">
@@ -14,7 +24,7 @@ function CartPage() {
                 <ul className="cart-list">
                     {cartItems.map(item => (
                         <li key={item.id} className="cart-item">
-                            <img src={item.image} alt={item.title} />
+                            <img src={item.image} alt={item.title}/>
                             <div className="cart-item-info">
                                 <span className="cart-item-title">{item.title}</span>
                                 <span className="cart-item-price">
@@ -31,6 +41,11 @@ function CartPage() {
                 </ul>
             )}
             <h2 className="cart-total">Total price: ${totalPrice}</h2>
+
+            <div >
+                <button onClick={handleOrderClick} className="button-orders">Place an order</button>
+            </div>
+
         </div>
     );
 }

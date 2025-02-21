@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, get } from "firebase/database";
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCAeUoa3QKKvQM5KLgW_CBSQmRokKr6QUs",
@@ -13,6 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+export const auth = getAuth(app);
 
 export const getProducts = () => {
     const starCountRef = ref(db, 'products/');
